@@ -39,7 +39,7 @@ public sealed unsafe partial class SightyFriendPlugin
   {
     currentWalkingSegment.EndPoint = clientState.LocalPlayer.Position;
     segments.Add(currentWalkingSegment);
-    Chat.Print(segments.Count.ToString());
+    //Chat.Print(segments.Count.ToString());
     currentWalkingSegment = null;
   }
 

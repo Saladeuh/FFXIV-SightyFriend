@@ -59,24 +59,23 @@ class ApiClient
       {
         string json = JsonConvert.SerializeObject(walkableSegment);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
-        Chat.Print("sending...");
+        //Chat.Print("sending...");
         HttpResponseMessage response = await this.HttpClient.PostAsync(POST_SEGMENT_URI, content);
-        Chat.Print(await response.Content.ReadAsStringAsync());
+        //Chat.Print(await response.Content.ReadAsStringAsync());
         return response.IsSuccessStatusCode;
       }
       catch (Exception e) {
-        Chat.Print(e.Message);
+        Chat.PrintError($"SightyFriend error: {e.Message}");
         return false; }
     }
   );
   }
   public async Task PostSegments(List<WalkableSegment> walkableSegments)
   {
-    foreach(WalkableSegment segment in walkableSegments)
+    foreach (WalkableSegment segment in walkableSegments)
     {
       PostSegment(segment);
     }
+    Chat.Print($"Sighty Friend: {walkableSegments.Count()} segments sent to database");
   }
-
-
 }
