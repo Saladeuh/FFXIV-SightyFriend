@@ -1,12 +1,13 @@
 {
   "Author": "Saladeuh",
   "Name": "Sighty Friend",
-  "Punchline": "todo",
-  "Description": "todo",
+  "Punchline": "Help blind players",
+  "Description": "Help to create database with paths and maybe descriptions of lands and characters later",
   "ApplicableVersion": "any",
   "Tags": [
-    "sample",
-    "plugin",
-    "goats"
+    "accessibility",
+    "a11y",
+    "blind",
+    "help"
   ]
 }

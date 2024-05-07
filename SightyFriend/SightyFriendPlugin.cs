@@ -51,15 +51,15 @@ public sealed unsafe partial class SightyFriendPlugin : IDalamudPlugin
 
   private void onLogout()
   {
-
+    SendSegments();
   }
 
-  private void SendSegments(ushort obj)
+  private void SendSegments(ushort obj = 0)
   {
     apiClient.PostSegments(segments);
     segments.Clear();
   }
-  
+
   public void Dispose()
   {
     this.framework.Update -= OnFrameworkUpdate;
